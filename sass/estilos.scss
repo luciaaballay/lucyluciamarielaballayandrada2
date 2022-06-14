@@ -1,0 +1,198 @@
+$color1: pink;
+$color2: #b497ee;
+$color3: #8c52ff;
+$color4: white;
+$color5: rgb(0, 0, 0);
+$color6: rgb(177, 197, 223);
+$color7: rgb(105, 105, 105);
+$color8: rgb(17, 17, 250);
+body{
+    background-color: $color1;
+    h2{
+        text-align: center;
+        background-color: $color2;
+        padding: 10px;
+        margin-bottom: 0;
+    }
+    h3{
+        text-align: center;
+    }
+
+    $mapa1: (
+    20px: red,
+    40px: orange,
+    60px: yellow,
+    80px: purple,
+
+    );
+    @each $sizes, $colores in $mapa1 {
+        .maps-#{$colores} {
+            background-color: #333;
+            height: 200px;
+            width: 500px;
+            border: 12px solid $colores;
+            text-align: center;
+            font-size: 35px;
+            line-height: 200px;
+            color: yellow;
+            text-transform: uppercase;
+            text-shadow: 0 0 5px orange;
+            font-family: $sizes;
+            border-radius: 10px;
+        }
+    }
+    @mixin cuadrado ($fondo, $ancho, $height){
+        background-color: $fondo;
+        width: $ancho;
+        height: $height;
+        margin-top: 5px;
+        padding: 10px;
+    }
+    .cuadrado-1{
+        @include cuadrado ($color2, 300px, 300px);
+    }
+    .cuadrado-2{
+        @include cuadrado ($color3, 400px, 300px);
+    }
+    .cuadrado-3{
+        @include cuadrado ($color2, 500px, 300px);
+    }
+    header{
+        background-color: $color1;
+        height: 150px;
+        width: 100%;
+
+        #bg-color{
+            background-color: $color3;
+            height: 150px;
+
+            div{
+                background-color: $color3;
+            }
+
+            .navbar-brand{
+                background-image: url(../assets/img/lucylogo1.png);
+                height: 150px;
+                width: 150px;
+                background-size: 120%;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        }
+    }
+    main{
+        p{
+            color: $color4;
+        }
+        .jumbotron{
+            background-image: url(../assets/img/rainbow33.png);
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            color: $color3;
+            text-shadow: 1px 1px 5px $color5;
+            border-radius: 0;
+            margin-bottom: 0;
+        }
+        h2{
+            @extend h2;
+        }
+        .container-fluid{
+            margin-top: 150px;
+
+            .card:hover{
+                background-color: $color2;
+            }
+            .card-body p{
+                color: $color5;
+            }
+        }
+        .nosotros{
+            height: 500px;
+            width: 100%;
+            background-color: $color1;
+        
+            .row{
+                height: 500px;
+
+                .nleft{
+                    background-color: $color3;
+                    background-image: url(../assets/img/cloud2.png);
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+                .nright{
+                    background-color: $color6;
+
+                    h3{
+                        text-align: center;
+                        padding: 20px;
+                    }
+                    p{
+                        text-align: justify;
+                    }
+                }
+            }
+        }
+    }
+    
+    .newsletter{
+        width: 100%;
+        min-height: 300px;
+        background-color: $color2;
+        padding: 50px;
+
+        input{
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            height: 40px;
+            border: 5px solid $color7;
+            font-size: 30px;
+        }
+        input:focus{
+        color: $color8;
+        }
+        
+    }
+    .card:hover{
+        background-color: $color2;
+    }
+    .card-body p{
+        color: $color5;
+    }
+    .form-group{
+        padding: 20px;
+        margin-right: 20px;
+
+        .form-check-label{
+            padding-left: 20px;
+        }
+        .form-control{
+            margin-right: 20px;
+        }
+    }
+    .boton{
+        padding-left: 20px;
+        padding-bottom: 50px;
+    }
+    footer{
+        min-height: 90px;
+        width: 100%;
+        background-color: $color3;
+        text-align: center;
+        font-size: 20px;
+        padding: 20px;
+    
+        .redes a{
+            min-height: 90px;
+            width: 100%;
+            color: $color6;
+            font-size: 25px;
+            padding-right: 15px;
+            padding-top: 20px;
+            letter-spacing: 15px;
+        }
+    }
+}
